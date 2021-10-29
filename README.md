@@ -4,3 +4,15 @@
 
 [![Planctor](https://github-readme-stats.vercel.app/api/top-langs/?username=Planctor&hide=html&layout=compact&theme=default)](https://github.com/Planctor/)
 
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # generates a snake game from a github user (https://github.com/Planctor) contributions graph, output a svg animation at <svg_out_path>
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk@master
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          svg_out_path: dist/github-contribution-grid-snake.svg
